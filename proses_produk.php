@@ -1,31 +1,44 @@
 <?php
-class Produk 
-{
-    public $nama;
-    public $harga;
 
-public function statusHarga() 
-{
-    if ($this->harga > 100000) 
-        {
-    return "Produk Mahal";
-    } 
-    else 
-    {
-    return "Produk Terjangkau";
+// Membuat array data mahasiswa
+$mahasiswa = [
+    [
+        "nama" => "Aditya",
+        "kelas" => "SI 2",
+        "matkul" => "Pemrograman Berorientasi Objek",
+        "nilai" => 80
+    ],
+    [
+        "nama" => "Shinta",
+        "kelas" => "SI 2",
+        "matkul" => "Pemrograman Berorientasi Objek",
+        "nilai" => 75
+    ],
+    [
+        "nama" => "Ineu",
+        "kelas" => "SI 2",
+        "matkul" => "Pemrograman Berorientasi Objek",
+        "nilai" => 55
+    ]
+];
+
+// Method untuk menentukan kelulusan
+function cekKelulusan($nilai) {
+    if ($nilai >= 70) {
+        return "Lulus Kuis";
+    } else {
+        return "Tidak Lulus Kuis";
     }
 }
+
+// Menampilkan data
+foreach ($mahasiswa as $data) {
+    echo "Nama : " . $data["nama"] . "<br>";
+    echo "Kelas : " . $data["kelas"] . "<br>";
+    echo "Mata Kuliah : " . $data["matkul"] . "<br>";
+    echo "Nilai : " . $data["nilai"] . "<br>";
+    echo cekKelulusan($data["nilai"]) . "<br>";
+    echo "<hr>";
 }
 
-$produk1 = new produk ();
-
-$produk1->nama =
-htmlspecialchars($_POST['nama']);
-$produk1->harga = 
-htmlspecialchars($_POST['harga']);
-
-echo "<h2>Data Produk</h2>";
-echo "Nama Produk : " . $produk1->nama . "<br>";
-echo "Harga : Rp " . $produk1->harga . "<br>";
-echo "Status : " . $produk1->harga;
 ?>
